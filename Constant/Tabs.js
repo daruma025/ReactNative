@@ -1,6 +1,5 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
 import Home from '../Screen/Home';
 import MyList from '../Screen/MyList';
 import Setting from '../Screen/Setting';
@@ -12,8 +11,6 @@ const Tab = createBottomTabNavigator();
 function Tabs() {
 
   return (
-
-    <NavigationContainer>  
 
     <Tab.Navigator
       screenOptions={{
@@ -121,7 +118,7 @@ function Tabs() {
 
     </Tab.Navigator>
     
-    </NavigationContainer>
+
   );
 }
 export default Tabs
