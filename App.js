@@ -1,15 +1,13 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import Tabs from './Constant/Tabs';
+import Routes from './Routes/Routes';
 
-const App = () => {
+function App() {
 
   return (
 
-    <NavigationContainer>
-      <Tabs />
-    </NavigationContainer>
+    <Routes /> 
 
   );
+
 }
 export default App

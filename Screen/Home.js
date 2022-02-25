@@ -2,12 +2,14 @@ import React from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
 import Styles from './Style.js';
 
-const Home = () => {
+function Home() {
+
     const image = require('../assets/movies.jpg')
     const item = ['Home Sweet Home', 'Our belove of summer',
         'Bad and Crazy', 'ตำรารักทะลุจอ', 'Moonshine',
         'Harry Potter', 'Ghost Docter', 'Reply1988',
         'Sissypmus', 'Start-Up']
+        
     return (
         <ScrollView>
             <View style={Styles.List}>

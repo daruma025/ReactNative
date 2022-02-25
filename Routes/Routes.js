@@ -1,0 +1,18 @@
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import LogIn from '../Screen/LogIn';
+import Tabs from '../Constant/Tabs';
+
+const Stack = createStackNavigator();
+
+export default function Routes() {
+    return (
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Login" component={LogIn} />
+          <Stack.Screen name="Tabs" component={Tabs} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
+  }
