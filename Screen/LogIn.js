@@ -7,7 +7,7 @@ export default function LogIn({ navigation }){
  
     return (
         <View style={styles.container}>
-            <View style={styles.header}><Text>NETHUB</Text></View>
+            <View style={styles.header}></View>
 
             <View style={styles.body}>
                 <Image source={require('../assets/movies.jpg')}
@@ -41,7 +41,7 @@ export default function LogIn({ navigation }){
                 />
             </View>
 
-            <View style={styles.footer}><Text>footer</Text></View>
+            <View style={styles.footer}></View>
         </View>
 
     );
@@ -50,12 +50,13 @@ export default function LogIn({ navigation }){
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: 'lightblue'
     },
     header: {
         flex: 2,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'lightblue',
+        // backgroundColor: 'lightblue',
     },
     body: {
         flex: 8,
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'steelblue'
+        // backgroundColor: 'steelblue'
     },
     input: {
         height: 40,
