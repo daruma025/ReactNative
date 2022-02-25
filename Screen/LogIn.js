@@ -10,7 +10,7 @@ export default function LogIn({ navigation }){
             <View style={styles.header}></View>
 
             <View style={styles.body}>
-                <Image source={require('../assets/movies.jpg')}
+                <Image source={require('../assets/Nethub.png')}
                     style={styles.Images} />
 
                 <TextInput style={styles.input}
@@ -56,7 +56,6 @@ const styles = StyleSheet.create({
         flex: 2,
         justifyContent: 'center',
         alignItems: 'center',
-        // backgroundColor: 'lightblue',
     },
     body: {
         flex: 8,
@@ -67,7 +66,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        // backgroundColor: 'steelblue'
     },
     input: {
         height: 40,
@@ -79,7 +77,9 @@ const styles = StyleSheet.create({
     Images: {
         width: 150,
         height: 150,
-        margin: 10
+        margin: 10,
+        bottom:20,
+        borderRadius: 20
 
     }
 
