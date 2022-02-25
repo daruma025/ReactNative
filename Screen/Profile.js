@@ -12,7 +12,7 @@ export default function Profile({ onPress }) {
 
             <View style={{ flex: 2, top: -170, justifyContent: 'center', alignItems: 'center'}}>
 
-                <Image source={require('../assets/movies.jpg')}
+                <Image source={require('../assets/download.png')}
                     style={{ width: 150, height: 150, borderRadius: 80 }}>
                 </Image>
 
