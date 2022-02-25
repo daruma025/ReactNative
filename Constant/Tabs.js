@@ -1,14 +1,19 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
 import Home from '../Screen/Home';
 import MyList from '../Screen/MyList';
+import Setting from '../Screen/Setting';
+import Profile from '../Screen/Profile';
 import { View, Image } from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
-const Tabs = () => {
+function Tabs() {
 
   return (
+
+    <NavigationContainer>  
 
     <Tab.Navigator
       screenOptions={{
@@ -38,7 +43,7 @@ const Tabs = () => {
 
       }}>
 
-      <Tab.Screen name="NetHub" component={Home} options={{
+      <Tab.Screen name="NETHUB" component={Home} options={{
         tabBarIcon: ({ focused }) => (
           <View
             style={{
@@ -57,7 +62,7 @@ const Tabs = () => {
       }}
       />
 
-      <Tab.Screen name="MyList" component={MyList} options={{
+      <Tab.Screen name="MY LIST" component={MyList} options={{
         tabBarIcon: ({ focused }) => (
           <View
             style={{
@@ -76,8 +81,47 @@ const Tabs = () => {
       }}
       />
 
-    </Tab.Navigator>
+<Tab.Screen name="SETTING" component={Setting} options={{
+        tabBarIcon: ({ focused }) => (
+          <View
+            style={{
+              alignItems: 'center',
+              justifyContent: 'center',
+              top: 10
 
+            }}
+          >
+            <Image
+              source={require('../assets/settings.png')}
+              resizeMode='contain'
+              style={{ width: 35, height: 35, bottom: 10, borderWidth: 5, tintColor: focused ? 'red' : 'gray' }} />
+          </View>
+        )
+      }}
+      />
+
+<Tab.Screen name="PROFILE" component={Profile} options={{
+        tabBarIcon: ({ focused }) => (
+          <View
+            style={{
+              alignItems: 'center',
+              justifyContent: 'center',
+              top: 10
+
+            }}
+          >
+            <Image
+              source={require('../assets/profile-user.png')}
+              resizeMode='contain'
+              style={{ width: 35, height: 35, bottom: 10, borderWidth: 5, tintColor: focused ? 'red' : 'gray' }} />
+          </View>
+        )
+      }}
+      />
+
+    </Tab.Navigator>
+    
+    </NavigationContainer>
   );
 }
 export default Tabs
