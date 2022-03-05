@@ -6,7 +6,7 @@ export default function Profile({ onPress }) {
     
     return (
         <View style={{ flex: 1 }}>
-            <View style={{ backgroundColor: 'lightblue', flex: 1 }}>
+            <View style={{ backgroundColor: '#FF9900', flex: 1 }}>
 
             </View>
 
@@ -29,7 +29,7 @@ export default function Profile({ onPress }) {
                         <Button
                     title="แก้ไขโปรไฟล์"
                     buttonStyle={{
-                        backgroundColor: 'rgba(111, 202, 186, 1)',
+                        backgroundColor: '#FF9900',
                         borderRadius: 5,
                     }}
                     titleStyle={{ fontWeight: 'bold', fontSize: 15 }}

@@ -27,7 +27,7 @@ export default function LogIn({ navigation }){
                     loading={false}
                     loadingProps={{ size: 'small', color: 'white' }}
                     buttonStyle={{
-                        backgroundColor: 'rgba(111, 202, 186, 1)',
+                        backgroundColor: '#FF9900',
                         borderRadius: 5,
                     }}
                     titleStyle={{ fontWeight: 'bold', fontSize: 23 }}
@@ -50,7 +50,7 @@ export default function LogIn({ navigation }){
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'lightblue'
+        backgroundColor: 'black'
     },
     header: {
         flex: 2,
@@ -72,7 +72,9 @@ const styles = StyleSheet.create({
         width: 300,
         borderWidth: 1,
         margin: 10,
-        padding: 10
+        padding: 10,
+        borderRadius: 20,
+        backgroundColor: 'white'
     },
     Images: {
         width: 150,

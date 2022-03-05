@@ -6,7 +6,7 @@ const Styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         flexWrap: 'wrap',
-        backgroundColor:'lightblue',
+        backgroundColor:'#FF9900',
     },
     item: {
         height: 200,

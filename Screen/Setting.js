@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding:9,
-        backgroundColor:'lightblue'
+        backgroundColor:'#FF9900'
     },
 
     item: {
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         color:'black',
-        backgroundColor: 'lightblue',
+        backgroundColor: '#FF9900',
         marginHorizontal: 10,
     },
 
