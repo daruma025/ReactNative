@@ -1,8 +1,9 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
 import { Button } from 'react-native-elements';
+import { StackActions } from '@react-navigation/native';
 
-export default function Profile({ onPress }) {
+export default function Profile({ navigation }) {
     
     return (
         <View style={{ flex: 1 }}>
@@ -50,15 +51,17 @@ export default function Profile({ onPress }) {
                         backgroundColor: 'red',
                         borderRadius: 5,
                     }}
-                    titleStyle={{ fontWeight: 'bold', fontSize: 15 }}
+                    titleStyle={{ fontWeight: 'bold', fontSize: 20 }}
                     containerStyle={{
-                        justifyContent: 'center',
-                        alignItems: 'center',
                         height: 50,
-                        width: 200,
-                        right: 45,
-                        top: 10
-                    }}/>
+                        width: 250,
+                        top: 40,
+                        right: 75,
+                        top: 80
+                    }}
+                    onPress={() => navigation.dispatch(StackActions.push('Login',{ user: ' ' }))}
+                    />
+                    
                     </View>
                 </View>
             </View>

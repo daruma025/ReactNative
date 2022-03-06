@@ -11,7 +11,7 @@ function Home() {
         'Sissypmus', 'Start-Up']
         
     return (
-        <ScrollView>
+        <ScrollView style={{height:300}}>
             <View style={Styles.List}>
                 {
                     item.map((item, i) => {

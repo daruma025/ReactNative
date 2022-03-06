@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import LogIn from '../Screen/LogIn';
 import Tabs from '../Constant/Tabs';
-
+import SignUp from '../Screen/SignUp';
 const Stack = createStackNavigator();
 
 export default function Routes() {

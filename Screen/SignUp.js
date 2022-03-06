@@ -4,7 +4,7 @@ import { Button,Input } from 'react-native-elements';
 import { StackActions } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
   
-export default function LogIn({ navigation }){
+export default function SignUp({ navigation }){
  
     return (
         <View style={styles.container}>
@@ -24,7 +24,7 @@ export default function LogIn({ navigation }){
                 />
                 <Input 
                     leftIcon = {<Icon 
-                    name = 'email'
+                    name = 'inbox'
                     color= 'white'
                     size= {20}
                     />}

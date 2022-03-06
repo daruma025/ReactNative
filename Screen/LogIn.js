@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react';
+import React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
 import { Button,Input } from 'react-native-elements';
 import { StackActions } from '@react-navigation/native';
@@ -30,8 +30,7 @@ export default function LogIn({ navigation }){
                     />}
                     placeholder="  Password"
                 />
-                <View style = {{flexDirection: 'row',}}>
-                <View>
+
                 <Button
                     title="Login"
                     loading={false}
@@ -49,27 +48,23 @@ export default function LogIn({ navigation }){
                     }}
                     onPress={() => navigation.dispatch(StackActions.push('Tabs',{ user: ' ' }))}
                 />
-                </View>
-                <View>
+                
                 <Button
                     title="Create an account"
-                    loading={false}
-                    loadingProps={{ size: 'small', color: 'white' }}
                     buttonStyle={{
-                        backgroundColor: '#FF9900',
+                        backgroundColor: 'black',
                         borderRadius: 5,
                     }}
-                    titleStyle={{ fontWeight: 'bold', fontSize: 23 }}
+                    titleStyle={{ fontWeight: 'bold', fontSize: 20 }}
                     containerStyle={{
                         height: 50,
-                        width: 150,
+                        width: 250,
                         top: 40,
                         margin:10
                     }}
                     onPress={() => navigation.dispatch(StackActions.push('Signup',{ user: ' ' }))}
                 />
-                </View>
-                </View>
+                
             </View>
 
             <View style={styles.footer}></View>
