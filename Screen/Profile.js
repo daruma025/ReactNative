@@ -27,7 +27,7 @@ export default function Profile({ onPress }) {
                 <View style={{ width: 100, height: 50, justifyContent: 'center', top: 20 }}>
                     <View>
                         <Button
-                    title="แก้ไขโปรไฟล์"
+                    title="Edit Profile"
                     buttonStyle={{
                         backgroundColor: '#FF9900',
                         borderRadius: 5,
@@ -45,7 +45,7 @@ export default function Profile({ onPress }) {
                     </View>
                     <View>
                     <Button
-                    title="ออกจากระบบ"
+                    title="Logout"
                     buttonStyle={{
                         backgroundColor: 'red',
                         borderRadius: 5,

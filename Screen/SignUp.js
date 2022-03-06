@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react';
+import React from 'react';
 import { View, Image, StyleSheet } from 'react-native';
 import { Button,Input } from 'react-native-elements';
 import { StackActions } from '@react-navigation/native';
@@ -23,6 +23,14 @@ export default function LogIn({ navigation }){
                     placeholder="  Username"
                 />
                 <Input 
+                    leftIcon = {<Icon 
+                    name = 'email'
+                    color= 'white'
+                    size= {20}
+                    />}
+                    placeholder="  Email"
+                />
+                <Input 
                 leftIcon = {<Icon 
                     name = 'lock'
                     color= 'white'
@@ -30,10 +38,9 @@ export default function LogIn({ navigation }){
                     />}
                     placeholder="  Password"
                 />
-                <View style = {{flexDirection: 'row',}}>
-                <View>
+
                 <Button
-                    title="Login"
+                    title="Register"
                     loading={false}
                     loadingProps={{ size: 'small', color: 'white' }}
                     buttonStyle={{
@@ -42,34 +49,14 @@ export default function LogIn({ navigation }){
                     }}
                     titleStyle={{ fontWeight: 'bold', fontSize: 23 }}
                     containerStyle={{
+                        marginHorizontal: 50,
                         height: 50,
-                        width: 150,
-                        top: 40,
-                        margin:10
+                        width: 200,
+                        marginVertical: 10,
+                        top: 40
                     }}
-                    onPress={() => navigation.dispatch(StackActions.push('Tabs',{ user: ' ' }))}
+                    onPress={() => navigation.dispatch(StackActions.push('Login',{ user: ' ' }))}
                 />
-                </View>
-                <View>
-                <Button
-                    title="Create an account"
-                    loading={false}
-                    loadingProps={{ size: 'small', color: 'white' }}
-                    buttonStyle={{
-                        backgroundColor: '#FF9900',
-                        borderRadius: 5,
-                    }}
-                    titleStyle={{ fontWeight: 'bold', fontSize: 23 }}
-                    containerStyle={{
-                        height: 50,
-                        width: 150,
-                        top: 40,
-                        margin:10
-                    }}
-                    onPress={() => navigation.dispatch(StackActions.push('Signup',{ user: ' ' }))}
-                />
-                </View>
-                </View>
             </View>
 
             <View style={styles.footer}></View>
@@ -97,15 +84,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-    },
-    Images: {
-        width: 150,
-        height: 150,
-        margin: 10,
-        bottom:20,
-        borderRadius: 20
-
     }
-
 })
 

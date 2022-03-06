@@ -12,6 +12,7 @@ export default function Routes() {
         <Stack.Navigator>
           <Stack.Screen name="Login" component={LogIn} options={{headerShown:false}}/>
           <Stack.Screen name="Tabs" component={Tabs} options={{headerShown:false}}/>
+          <Stack.Screen name="Signup" component={SignUp} options={{headerShown:false}}/>
         </Stack.Navigator>
       </NavigationContainer>
     );
