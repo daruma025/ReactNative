@@ -19,10 +19,6 @@ function Tabs() {
         tabBarStyle: {
           position: 'absolute',
           height: 75,
-          borderRadius: 15,
-          bottom: 10,
-          left: 20,
-          right: 20,
           elevation: 0,
           backgroundColor: '#FFFFFF',
 

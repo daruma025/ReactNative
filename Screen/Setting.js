@@ -37,6 +37,7 @@ const Setting = () => {
     return (
         <SafeAreaView style={styles.container}>
             <SectionList
+                style = {{marginBottom:65}}
                 sections={DATA}
                 keyExtractor={(item, index) => item + index}
                 renderItem={({ item }) => <Item title={item} />}
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding:9,
-        backgroundColor:'#FF9900'
+        backgroundColor:'#FF9900',
     },
 
     item: {
