@@ -11,7 +11,7 @@ export default function SignUp({ navigation }){
             <View style={styles.header}></View>
 
             <View style={styles.body}>
-                <Image source={require('../assets/Nethub.png')}
+                <Image source={require('../assets/pokemon.png')}
                     style={{width:150, height: 150, bottom:50}} />
 
                 <Input 

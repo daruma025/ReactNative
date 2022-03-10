@@ -66,7 +66,7 @@ function Tabs() {
             }}
           >
             <Image
-              source={require('../assets/to-do-list.png')}
+              source={require('../assets/heart.png')}
               resizeMode='contain'
               style={{ width: 35, height: 35, bottom: 10, borderWidth: 5, tintColor: focused ? 'red' : 'gray' }} />
           </View>
@@ -104,7 +104,7 @@ function Tabs() {
             }}
           >
             <Image
-              source={require('../assets/profile-user.png')}
+              source={require('../assets/user.png')}
               resizeMode='contain'
               style={{ width: 35, height: 35, bottom: 10, borderWidth: 5, tintColor: focused ? 'red' : 'gray' }} />
           </View>

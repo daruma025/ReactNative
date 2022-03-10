@@ -13,16 +13,16 @@ export default function Profile({ navigation }) {
 
             <View style={{ flex: 2, top: -170, justifyContent: 'center', alignItems: 'center'}}>
 
-                <Image source={require('../assets/download.png')}
-                    style={{ width: 150, height: 150, borderRadius: 80 }}>
+                <Image source={require('../assets/pikachu.png')}
+                    style={{ width: 150, height: 150}}>
                 </Image>
 
                 <View style={{ top: 10 }}>
-                    <Text style={{ fontWeight: 'bold', fontSize: 20 }}>Kunanon Chairerk</Text>
+                    <Text style={{ fontWeight: 'bold', fontSize: 20 }}>Pikachu</Text>
                 </View>
 
                 <View style={{ top: 10 }}>
-                    <Text style={{ fontSize: 12, color: 'gray' }}>เริ่มเป็นสมาชิกตั้งแต่ 19 กุมภาพันธ์ 2565</Text>
+                    <Text style={{ fontSize: 12, color: 'gray' }}>Exp : 9999999999999999</Text>
                 </View>
 
                 <View style={{ width: 100, height: 50, justifyContent: 'center', top: 20 }}>
