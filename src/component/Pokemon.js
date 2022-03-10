@@ -3,9 +3,9 @@ import { View, Text, Image, FlatList, StyleSheet } from 'react-native'
 
 const Pokemon = ({ name, pic, types, desc }) => {
     return (
-        <View style={{backgroundColor: 'black',padding: 20, alignItems: 'center', top: 80,borderWidth:3, borderColor: '#ffffff', marginLeft: 40, marginRight: 40, borderRadius: 20 }}>
+        <View style={{padding:10,backgroundColor: "white",borderRadius:30,alignItems: 'center',marginLeft: 40, marginRight: 40,height:'80%',top:20}}>
             <Image style={{ width: 150, height: 150 }} source={{ uri: pic }} resizeMode="contain" />
-            <Text style={{ fontSize: 20, marginBottom: 10,color:'#ffffff',fontWeight:'bold' }}>{name}</Text>
+            <Text style={{ fontSize: 20, marginBottom: 10,color:'black',fontWeight:'bold' }}>{name}</Text>
 
             <FlatList
                 columnWrapperStyle={styles.types}
@@ -14,13 +14,13 @@ const Pokemon = ({ name, pic, types, desc }) => {
                 keyExtractor={(item) => item.id.toString()}
                 renderItem = {({ item }) => (
                     <View style={[styles[item.name], styles.type]}>
-                        <Text style={{color:"white" ,fontWeight:'bold'}}>{item.name}</Text>
+                        <Text style={{color:'white' ,fontWeight:'bold'}}>{item.name}</Text>
                     </View>
                 )}
             />
 
-            <View style={{ marginTop: 10 }}>
-                <Text style={{color: '#ffffff'}}>{desc}</Text>
+            <View style={{marginBottom:60}}> 
+                <Text style={{color: 'black',fontSize:10}}>{desc}</Text>
             </View>
         </View>
     )

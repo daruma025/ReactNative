@@ -2,7 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../Screen/Home';
 import MyList from '../Screen/MyList';
-import Setting from '../Screen/Setting';
+import Search from '../Screen/Search';
 import Profile from '../Screen/Profile';
 import { View, Image } from 'react-native';
 
@@ -36,7 +36,7 @@ function Tabs() {
 
       }}>
 
-      <Tab.Screen name="NETHUB" component={Home} options={{
+      <Tab.Screen name="POKEMON" component={Home} options={{
         tabBarIcon: ({ focused }) => (
           <View
             style={{
@@ -55,7 +55,7 @@ function Tabs() {
       }}
       />
 
-      <Tab.Screen name="MY LIST" component={MyList} options={{
+      <Tab.Screen name="FAVORITE" component={MyList} options={{
         tabBarIcon: ({ focused }) => (
           <View
             style={{
@@ -74,7 +74,7 @@ function Tabs() {
       }}
       />
 
-<Tab.Screen name="SETTING" component={Setting} options={{
+<Tab.Screen name="SEARCH" component={Search} options={{
         tabBarIcon: ({ focused }) => (
           <View
             style={{
@@ -85,7 +85,7 @@ function Tabs() {
             }}
           >
             <Image
-              source={require('../assets/settings.png')}
+              source={require('../assets/search.png')}
               resizeMode='contain'
               style={{ width: 35, height: 35, bottom: 10, borderWidth: 5, tintColor: focused ? 'red' : 'gray' }} />
           </View>
