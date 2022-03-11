@@ -24,7 +24,7 @@ const Home = props => {
   };
 
   return (
-    <View>
+    <View style={{backgroundColor:'#ffffff'}}>
       <View style={styles.searchCont}>
         <TextInput
           style={styles.searchfeild}
@@ -33,7 +33,7 @@ const Home = props => {
           value={searchfeild}
         />
       </View>
-      <ScrollView style={{top:54}}>
+      <ScrollView style={{top:15}}>
         <View style={styles.container}>
           {pokemons
             .filter(pokemon =>
@@ -58,7 +58,7 @@ const Home = props => {
                       }.png`,
                     }}
                   />
-                  <Text>{pokemon.name}</Text>
+                  <Text style={{fontStyle:'italic', fontSize:20,color:'#ffffff',fontWeight:'bold'}}>{pokemon.name}</Text>
                 </TouchableOpacity>
               );
             })}
@@ -82,18 +82,17 @@ const styles = StyleSheet.create({
       display: 'flex',
       alignItems: 'center',
       borderWidth: 1,
-      borderBottomColor: 'black',
+      borderColor: '#FF9900',
       marginHorizontal: 10,
       marginVertical: 10,
       borderRadius:8,
+      height:200,
+      backgroundColor: '#FF9900'
+
     },
     searchCont: {
-      position: 'absolute',
-      marginBottom: 70,
-      left: '15%',
-      right: '20%',
-      zIndex: 1,
-      marginTop: 10
+      marginHorizontal:50,
+      marginTop:20,
     },
     searchfeild: {
       height: 40,
