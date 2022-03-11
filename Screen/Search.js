@@ -35,7 +35,7 @@ export default class Search extends Component {
                             <TextInput
                                 style={styles.search}
                                 placeholder="Search Pokemon"
-                                onChangeText={(searchInput) => this.setState({ searchInput })}
+                                onChangeText={( searchInput ) => this.setState({ searchInput })}
                                 value={this.state.searchInput}
                             />
                             </View>
