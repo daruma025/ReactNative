@@ -1,70 +1,89 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
-import { Button } from 'react-native-elements';
+import { View, Text, Image, StyleSheet } from 'react-native';
+import { Button, LinearProgress } from 'react-native-elements';
 import { StackActions } from '@react-navigation/native';
 
 export default function Profile({ navigation }) {
-    
+
     return (
         <View style={{ flex: 1 }}>
-            <View style={{ backgroundColor: 'red', flex: 2 , flexDirection:'row'}}>
-            <Image source={require('../assets/satochi.jpg')}
-                    style={{ width: 150, height: 150, borderRadius:80 ,marginHorizontal:20,top:20}}>
+            <View style={styles.background}>
+                <Text style={styles.stoshiname}>Satoshi</Text>
+                <Text style={styles.pikachuname}>&Pikachu</Text>
+                <Image source={require('../assets/satoshiandpikachu.png')}
+                    style={styles.pic}>
                 </Image>
-            <Text style>Satoshi Tajiri</Text>
-            </View>
+                <Text style={styles.level}>Level 10</Text>
+                <LinearProgress style={styles.linear} color="white" />
+                <Text style={styles.xp}>9999/10000 XP</Text>
 
-            <View style={{ flex: 2, justifyContent: 'center', alignItems: 'center'}}>
-
-                <View style={{ top: 10 }}>
-                    <Text style={{ fontWeight: 'bold', fontSize: 20 }}>Pikachu</Text>
-                </View>
-
-                <View style={{ top: 10 }}>
-                    <Text style={{ fontSize: 12, color: 'gray' }}>Exp : 9999999999999999</Text>
-                </View>
-
-                <View style={{ width: 100, height: 50, justifyContent: 'center', top: 20 }}>
-                    <View>
-                        <Button
-                    title="Edit Profile"
+                <Button
+                    title="LOGOUT"
                     buttonStyle={{
-                        backgroundColor: '#FF9900',
-                        borderRadius: 5,
+                        backgroundColor: 'white',
+                        borderRadius: 20,
                     }}
-                    titleStyle={{ fontWeight: 'bold', fontSize: 15 }}
+                    titleStyle={{ fontWeight: 'bold', fontSize: 16, color: 'black' }}
                     containerStyle={{
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        height: 50,
-                        width: 200,
-                        right: 45,
-                        top: 15
-                    }}/>
-
-                    </View>
-                    <View>
-                    <Button
-                    title="Logout"
-                    buttonStyle={{
-                        backgroundColor: 'red',
-                        borderRadius: 5,
+                        height: 40,
+                        width: 260,
+                        top: 60,
+                        left: 50
                     }}
-                    titleStyle={{ fontWeight: 'bold', fontSize: 20 }}
-                    containerStyle={{
-                        height: 50,
-                        width: 250,
-                        top: 40,
-                        right: 75,
-                        top: 80
-                    }}
-                    onPress={() => navigation.dispatch(StackActions.push('Login',{ user: ' ' }))}
-                    />
-                    
-                    </View>
-                </View>
+                    onPress={() => navigation.dispatch(StackActions.push('Login', { user: ' ' }))}
+                />
             </View>
-
         </View>
     )
 }
+const styles = StyleSheet.create({
+    background: {
+        backgroundColor: 'red', flex: 2
+    },
+    stoshiname: {
+        color: 'white',
+        fontStyle: 'italic',
+        fontSize: 30,
+        fontWeight: 'bold',
+        top: 20,
+        left: 130
+    },
+    pikachuname: {
+        color: 'white',
+        fontStyle: 'italic',
+        fontSize: 20, fontWeight: 'bold',
+        top: 17,
+        left: 130
+    },
+    pic: {
+        width: 200,
+        height: 270,
+        top: 35,
+        left: 80
+    },
+    level: {
+        color: 'white',
+        fontStyle: 'italic',
+        fontSize: 25,
+        fontWeight: 'bold',
+        top: 40,
+        left: 130
+    },
+    linear: {
+        marginVertical: 10,
+        width: 300,
+        height: 10,
+        top: 30,
+        left: 30,
+        borderRadius: 60
+    },
+    xp: {
+        color: 'white',
+        fontStyle: 'italic',
+        fontSize: 16,
+        fontWeight: 'bold',
+        top: 30,
+        left: 120
+    },
+
+})

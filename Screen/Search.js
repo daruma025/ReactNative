@@ -27,7 +27,7 @@ export default class Search extends Component {
 
         const { name, pic, types, desc, searchInput, isLoading } = this.state
         return (
-            <View style={{ backgroundColor: '#FF9900', height: '110%' }}>
+            <View style={{ backgroundColor: 'red', height: '110%' }}>
                 <View>
                         <View>
                         <View style= {{flexDirection:'row'}}>
@@ -35,19 +35,19 @@ export default class Search extends Component {
                             <TextInput
                                 style={styles.search}
                                 placeholder="Search Pokemon"
-                                onChangeText={( searchInput ) => this.setState({ searchInput })}
+                                onChangeText={(searchInput) => this.setState({ searchInput })}
                                 value={this.state.searchInput}
                             />
                             </View>
                             <View style={{padding:10, top:3}}>
                             <Button
-                                title="search"
+                                title="SEARCH"
                                 buttonStyle={{
-                                    backgroundColor: 'black',
+                                    backgroundColor: 'white',
                                     borderRadius: 5,
                                     
                                 }}
-                                titleStyle={{ fontSize: 10 }}
+                                titleStyle={{ fontSize: 10 ,color:'black'}}
                                 containerStyle={{
                                     width:70,
                                     height:60,

@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Image, StyleSheet, TextInput, Text } from 'react-native';
 import { Button, CheckBox } from 'react-native-elements';
 import { StackActions } from '@react-navigation/native';
 
 export default function LogIn({ navigation }) {
-
-    const [isSelected, setSelection] = useState(true);
 
     return (
         <View style={styles.container}>
@@ -49,8 +47,8 @@ export default function LogIn({ navigation }) {
                     <Text style={{ top: 40, fontWeight: 'bold', color: 'gray' }}>Forget your password ?</Text>
                 </View>
 
-                <View style={{top:40,flexDirection:'row'}}>
-                    <Text style={{top:8}}>Don't have an account ?</Text>
+                <View style={{ top: 40, flexDirection: 'row' }}>
+                    <Text style={{ top: 8 }}>Don't have an account ?</Text>
                     <Button
                         title="Create an account"
                         buttonStyle={{
