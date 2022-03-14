@@ -1,61 +1,48 @@
 import React from 'react';
-import { View, Image, StyleSheet } from 'react-native';
-import { Button,Input } from 'react-native-elements';
+import { View, Image, StyleSheet, TextInput } from 'react-native';
+import { Button } from 'react-native-elements';
 import { StackActions } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-  
-export default function SignUp({ navigation }){
- 
+
+export default function SignUp({ navigation }) {
+
     return (
         <View style={styles.container}>
             <View style={styles.header}></View>
 
             <View style={styles.body}>
-                <Image source={require('../assets/pokemon.png')}
-                    style={{width:150, height: 150, bottom:50}} />
+                <Image source={require('../assets/pokemon-go.png')}
+                    style={{ width: 300, height: 200, bottom: 50 }} />
 
-                <Input 
-                    leftIcon = {<Icon 
-                    name = 'user'
-                    color= 'white'
-                    size= {20}
-                    />}
-                    placeholder="  Username"
+                <TextInput
+                    style={styles.input}
+                    placeholder="USERNAME"
                 />
-                <Input 
-                    leftIcon = {<Icon 
-                    name = 'inbox'
-                    color= 'white'
-                    size= {20}
-                    />}
-                    placeholder="  Email"
+
+                <TextInput
+                    style={styles.input}
+                    placeholder="E-MAIL"
                 />
-                <Input 
-                leftIcon = {<Icon 
-                    name = 'lock'
-                    color= 'white'
-                    size= {20}
-                    />}
-                    placeholder="  Password"
+
+                <TextInput
+                    style={styles.input}
+                    placeholder="PASSWORD"
                 />
 
                 <Button
-                    title="Register"
-                    loading={false}
-                    loadingProps={{ size: 'small', color: 'white' }}
+                    title="REGISTER"
                     buttonStyle={{
-                        backgroundColor: '#FF9900',
-                        borderRadius: 5,
+                        backgroundColor: 'red',
+                        borderRadius: 20,
                     }}
-                    titleStyle={{ fontWeight: 'bold', fontSize: 23 }}
+                    titleStyle={{ fontWeight: 'bold', fontSize: 16 }}
                     containerStyle={{
-                        marginHorizontal: 50,
-                        height: 50,
-                        width: 200,
-                        marginVertical: 10,
-                        top: 40
+                        height: 40,
+                        width: 260,
+                        top: 10,
+                        margin: 5
                     }}
-                    onPress={() => navigation.dispatch(StackActions.push('Login',{ user: ' ' }))}
+                    onPress={() => navigation.dispatch(StackActions.push('Login', { user: ' ' }))}
                 />
             </View>
 
@@ -68,7 +55,7 @@ export default function SignUp({ navigation }){
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'black'
+        backgroundColor: 'white'
     },
     header: {
         flex: 2,
@@ -84,6 +71,15 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+    },
+    input: {
+        height: 40,
+        margin: 5,
+        borderWidth: 1,
+        padding: 10,
+        width: 260,
+        borderRadius: 20
+
     }
 })
 

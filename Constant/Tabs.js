@@ -1,10 +1,10 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from '../Screen/Home';
-import MyList from '../Screen/MyList';
 import Search from '../Screen/Search';
 import Profile from '../Screen/Profile';
 import { View, Image } from 'react-native';
+import { color } from 'react-native-elements/dist/helpers';
 
 const Tab = createBottomTabNavigator();
 
@@ -36,6 +36,25 @@ function Tabs() {
 
       }}>
 
+      <Tab.Screen name="SEARCH" component={Search} options={{
+        tabBarIcon: ({ focused }) => (
+          <View
+            style={{
+              alignItems: 'center',
+              justifyContent: 'center',
+              top: 10
+            }}
+          >
+            <Image
+              source={require('../assets/magnifier.png')}
+              resizeMode='contain'
+              style={{ width: 30, height: 30, bottom: 10, borderWidth: 5, tintColor: focused ? 'red' : 'gray' }} />
+          </View>
+        )
+      }}
+      />
+
+
       <Tab.Screen name="POKEMON" component={Home} options={{
         tabBarIcon: ({ focused }) => (
           <View
@@ -47,53 +66,15 @@ function Tabs() {
             }}
           >
             <Image
-              source={require('../assets/home.png')}
+              source={require('../assets/pokeball.png')}
               resizeMode='contain'
-              style={{ width: 35, height: 35, bottom: 10, borderWidth: 5, tintColor: focused ? 'red' : 'gray' }} />
+              style={{ width: 70, height: 70, bottom: 10, borderWidth: 5, tintColor: focused ? 'red' : 'gray' }} />
           </View>
         )
       }}
       />
 
-      <Tab.Screen name="FAVORITE" component={MyList} options={{
-        tabBarIcon: ({ focused }) => (
-          <View
-            style={{
-              alignItems: 'center',
-              justifyContent: 'center',
-              top: 10
-
-            }}
-          >
-            <Image
-              source={require('../assets/heart.png')}
-              resizeMode='contain'
-              style={{ width: 35, height: 35, bottom: 10, borderWidth: 5, tintColor: focused ? 'red' : 'gray' }} />
-          </View>
-        )
-      }}
-      />
-
-<Tab.Screen name="SEARCH" component={Search} options={{
-        tabBarIcon: ({ focused }) => (
-          <View
-            style={{
-              alignItems: 'center',
-              justifyContent: 'center',
-              top: 10
-
-            }}
-          >
-            <Image
-              source={require('../assets/search.png')}
-              resizeMode='contain'
-              style={{ width: 35, height: 35, bottom: 10, borderWidth: 5, tintColor: focused ? 'red' : 'gray' }} />
-          </View>
-        )
-      }}
-      />
-
-<Tab.Screen name="PROFILE" component={Profile} options={{
+      <Tab.Screen name="PROFILE" component={Profile} options={{
         tabBarIcon: ({ focused }) => (
           <View
             style={{
@@ -113,7 +94,7 @@ function Tabs() {
       />
 
     </Tab.Navigator>
-    
+
   );
 }
 export default Tabs

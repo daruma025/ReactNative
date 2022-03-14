@@ -1,105 +1,118 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
   ScrollView,
   Image,
-  TouchableOpacity,
-  StyleSheet,
-  TextInput,
 } from 'react-native';
+import { Button } from 'react-native-elements';
+import axios from 'axios';
 
-const Home = props => {
-  const [pokemons, setPokemons] = useState([]);
-  const [searchfeild, setSearchfeild] = useState('');
+export default function Home() {
+  const [pokedex, setPokedex] = useState([])
+  const [wildPokemon, setWildPokemon] = useState({});
 
   useEffect(() => {
-    fetchPokemons();
-  }, []);
+    encounterWildPokemon()
+  }, [])
 
-  const fetchPokemons = () => {
-    fetch('https://pokeapi.co/api/v2/pokemon?limit=500')
-      .then(response => response.json())
-      .then(pokemons => setPokemons(pokemons.results));
-  };
+  const pokeId = () => {
+    const min = Math.ceil(1)
+    const max = Math.floor(151)
+    return Math.floor(Math.random() * (max - min + 1)) + min
+  }
+
+  const encounterWildPokemon = () => {
+    axios
+      .get('https://pokeapi.co/api/v2/pokemon/' + pokeId())
+      .then(response => {
+        setWildPokemon(response.data);
+      })
+  }
+
+  const catchPokemon = (pokemon) => {
+    setPokedex(state => {
+      const monExists = (state.filter(p => pokemon.id == p.id).length > 0);
+
+      if (!monExists) {
+        state = [...state, pokemon]
+        state.sort(function (a, b) {
+          return a.id - b.id
+        })
+      }
+      return state
+    })
+    encounterWildPokemon()
+  }
+
+  const releasePokemon = id => {
+    setPokedex(state => state.filter(p => p.id != id))
+  }
 
   return (
-    <View style={{backgroundColor:'#ffffff'}}>
-      <View style={styles.searchCont}>
-        <TextInput
-          style={styles.searchfeild}
-          placeholder="Search Pokemons"
-          onChangeText={value => setSearchfeild(value)}
-          value={searchfeild}
+
+    <View>
+      <View>
+        <Image
+          style={{ width: 150, height: 150 }}
+          source={{
+            uri: `https://img.pokemondb.net/sprites/omega-ruby-alpha-sapphire/dex/normal/${wildPokemon.name
+              }.png`,
+          }}
+        />
+        <Text>{wildPokemon.name}</Text>
+        <Button
+          title="Catch"
+          buttonStyle={{
+            backgroundColor: 'black',
+            borderRadius: 5,
+          }}
+          titleStyle={{ fontWeight: 'bold', fontSize: 20 }}
+          containerStyle={{
+            height: 50,
+            width: 90,
+            top: 40,
+            margin: 10
+          }}
+          onPress={() => catchPokemon(wildPokemon)}
         />
       </View>
-      <ScrollView style={{top:15}}>
-        <View style={styles.container}>
-          {pokemons
-            .filter(pokemon =>
-              pokemon.name.toLowerCase().includes(searchfeild.toLowerCase())
-            )
-            .map((pokemon, index) => {
-              return (
-                <TouchableOpacity
-                  activeOpacity={0.5}
-                  key={index}
-                  style={styles.card}
-                  onPress={() =>
-                    props.navigation.navigate('Details', {
-                      pokemon: pokemon.name,
-                    })
-                  }>
-                  <Image
-                    style={{width: 150, height: 150}}
-                    source={{
-                      uri: `https://img.pokemondb.net/sprites/omega-ruby-alpha-sapphire/dex/normal/${
-                        pokemon.name
-                      }.png`,
-                    }}
-                  />
-                  <Text style={{fontStyle:'italic', fontSize:20,color:'#ffffff',fontWeight:'bold'}}>{pokemon.name}</Text>
-                </TouchableOpacity>
-              );
-            })}
+
+      <Text style={{ top: 50 }}>Pokédex</Text>
+      <ScrollView style={{ top: 50 }}>
+        <View>
+          {pokedex.map(pokemon => (
+            <View key={pokemon.id}>
+              <Image
+                style={{ width: 150, height: 150 }}
+                source={{
+                  uri: `https://img.pokemondb.net/sprites/omega-ruby-alpha-sapphire/dex/normal/${pokemon.name
+                    }.png`,
+                }} />
+
+              <Text>{pokemon.name}</Text>
+              <Button
+                title=""
+                buttonStyle={{
+                  backgroundColor: 'black',
+                  borderRadius: 5,
+                }}
+                titleStyle={{ fontWeight: 'bold', fontSize: 20 }}
+                containerStyle={{
+                  height: 50,
+                  width: 30,
+                  top: 40,
+                  margin: 10
+                }}
+                onPress={() => releasePokemon(pokemon.id)}
+
+
+              />
+            </View>
+          ))}
         </View>
       </ScrollView>
+
     </View>
-  );
-};
-
-export default Home;
-
-const styles = StyleSheet.create({
-    container: {
-      display: 'flex',
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      justifyContent: 'center',
-      marginTop: 30,
-    },
-    card: {
-      display: 'flex',
-      alignItems: 'center',
-      borderWidth: 1,
-      borderColor: '#FF9900',
-      marginHorizontal: 10,
-      marginVertical: 10,
-      borderRadius:8,
-      height:200,
-      backgroundColor: '#FF9900'
-
-    },
-    searchCont: {
-      marginHorizontal:50,
-      marginTop:20,
-    },
-    searchfeild: {
-      height: 40,
-      borderWidth: 1,
-      borderColor: '#000',
-      textAlign: 'center',
-      width: 250,
-      borderRadius: 50,
-    },
-  });
+  )
+}

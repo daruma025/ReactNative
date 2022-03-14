@@ -7,15 +7,14 @@ export default function Profile({ navigation }) {
     
     return (
         <View style={{ flex: 1 }}>
-            <View style={{ backgroundColor: '#FF9900', flex: 1 }}>
-
+            <View style={{ backgroundColor: 'red', flex: 2 , flexDirection:'row'}}>
+            <Image source={require('../assets/satochi.jpg')}
+                    style={{ width: 150, height: 150, borderRadius:80 ,marginHorizontal:20,top:20}}>
+                </Image>
+            <Text style>Satoshi Tajiri</Text>
             </View>
 
-            <View style={{ flex: 2, top: -170, justifyContent: 'center', alignItems: 'center'}}>
-
-                <Image source={require('../assets/pikachu.png')}
-                    style={{ width: 150, height: 150}}>
-                </Image>
+            <View style={{ flex: 2, justifyContent: 'center', alignItems: 'center'}}>
 
                 <View style={{ top: 10 }}>
                     <Text style={{ fontWeight: 'bold', fontSize: 20 }}>Pikachu</Text>
