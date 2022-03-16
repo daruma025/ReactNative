@@ -2,7 +2,6 @@ import React from 'react';
 import { View, Image, StyleSheet, TextInput } from 'react-native';
 import { Button } from 'react-native-elements';
 import { StackActions } from '@react-navigation/native';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function SignUp({ navigation }) {
 

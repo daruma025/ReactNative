@@ -4,7 +4,6 @@ import Home from '../Screen/Home';
 import Search from '../Screen/Search';
 import Profile from '../Screen/Profile';
 import { View, Image } from 'react-native';
-import { color } from 'react-native-elements/dist/helpers';
 
 const Tab = createBottomTabNavigator();
 
