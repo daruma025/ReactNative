@@ -38,7 +38,7 @@ export default function Profile({ navigation }) {
 }
 const styles = StyleSheet.create({
     background: {
-        backgroundColor: 'red', flex: 2
+        backgroundColor: '#b22222', flex: 2
     },
     stoshiname: {
         color: 'white',

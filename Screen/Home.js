@@ -7,6 +7,7 @@ import {
 } from 'react-native';
 import { Button } from 'react-native-elements';
 import axios from 'axios';
+import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 
 export default function Home() {
   const [pokedex, setPokedex] = useState([])
@@ -42,13 +43,15 @@ export default function Home() {
       }
       return state
     })
+
     encounterWildPokemon()
     
   }
 
-  const releasePokemon = id => {
+  const releasePokemon = (id) => {
     setPokedex(state => state.filter(p => p.id != id))
   }
+  
 
   return (
 

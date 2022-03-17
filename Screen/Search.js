@@ -27,7 +27,7 @@ export default class Search extends Component {
 
         const { name, pic, types, desc, searchInput, isLoading } = this.state
         return (
-            <View style={{ backgroundColor: 'red', height: '110%' }}>
+            <View style={{ backgroundColor: '#b22222', height: '110%' }}>
                 <View>
                         <View>
                         <View style= {{flexDirection:'row'}}>
