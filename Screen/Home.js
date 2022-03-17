@@ -43,6 +43,7 @@ export default function Home() {
       return state
     })
     encounterWildPokemon()
+    
   }
 
   const releasePokemon = id => {
