@@ -7,7 +7,6 @@ import {
 } from 'react-native';
 import { Button } from 'react-native-elements';
 import axios from 'axios';
-import { AsyncStorage } from '@react-native-async-storage/async-storage';
 
 export default function Home() {
   const [pokedex, setPokedex] = useState([])
